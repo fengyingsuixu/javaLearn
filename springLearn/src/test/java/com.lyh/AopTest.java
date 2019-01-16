@@ -40,9 +40,9 @@ public class AopTest {
         AdvisorAutoProxyCreator creater = new AdvisorAutoProxyCreator();
         beanFactory.registryBeanPostProcessor(creater);
 
-        creater.registryAdvisor(new AspectJPointCutAdvisor("execution(* com.lv.spring.samples.AopBean.method*(..))","afterAdvice"));
-        creater.registryAdvisor(new AspectJPointCutAdvisor("execution(* com.lv.spring.samples.AopBean.method*(..))","aroundAdvice"));
-        creater.registryAdvisor(new AspectJPointCutAdvisor("execution(* com.lv.spring.samples.AopBean.method*(..))","beforeAdvice"));
+        creater.registryAdvisor(new AspectJPointCutAdvisor("execution(* com.lyh.samples.AopBean.method*(..))","afterAdvice"));
+        creater.registryAdvisor(new AspectJPointCutAdvisor("execution(* com.lyh.samples.AopBean.method*(..))","aroundAdvice"));
+        creater.registryAdvisor(new AspectJPointCutAdvisor("execution(* com.lyh.samples.AopBean.method*(..))","beforeAdvice"));
 
         beanFactory.preInstantiateSingletons();
 
