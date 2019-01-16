@@ -5,5 +5,8 @@ package com.lyh.beans;
  */
 public interface BeanFactory {
 
-    Object getBean(String name) throws Exception;
+    Object getBean(String beanName) throws Exception;
+
+    void registryBeanPostProcessor(BeanPostProcessor beanPostProcessor);
+
 }

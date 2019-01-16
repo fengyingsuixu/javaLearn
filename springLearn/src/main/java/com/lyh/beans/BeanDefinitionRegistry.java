@@ -5,7 +5,7 @@ package com.lyh.beans;
  */
 public interface BeanDefinitionRegistry {
 
-    void registerBeanDefinition(String beanName, BeanDefinition beanDefinition);
+    void registerBeanDefinition(String beanName,BeanDefinition beanDefinition)throws BeanDefinitionRegistryException;
 
     BeanDefinition getBeanDefinition(String beanName);
 
