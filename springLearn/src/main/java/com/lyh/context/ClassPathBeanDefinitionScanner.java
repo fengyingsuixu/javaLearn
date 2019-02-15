@@ -6,5 +6,9 @@ package com.lyh.context;
  */
 public class ClassPathBeanDefinitionScanner {
 
+    public void scan(String ...basePackages){
+
+    }
+
 
 }

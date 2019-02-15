@@ -1,6 +1,6 @@
 package com.lyh.context;
 
-import java.util.Set;
+import java.io.IOException;
 
 /**
  * Created by lvyanghui
@@ -8,10 +8,15 @@ import java.util.Set;
  */
 public class AnnotationnApplicationContext extends AbstractApplicationContext{
 
-    private ClassPathBeanDefinitionScanner scanner = new ClassPathBeanDefinitionScanner();
+    private ClassPathBeanDefinitionScanner scanner;
+
+    public AnnotationnApplicationContext(String ...basePackaes) {
+        this.scanner = new ClassPathBeanDefinitionScanner();
+        scanner.scan(basePackaes);
+    }
 
     @Override
-    public Set<Resource> load(String... locations) {
+    public Resource getResource(String location) throws IOException {
         return null;
     }
 }

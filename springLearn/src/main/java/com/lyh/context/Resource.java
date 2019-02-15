@@ -1,7 +1,6 @@
 package com.lyh.context;
 
 import java.io.File;
-import java.io.InputStream;
 
 /**
  * Created by lvyanghui
@@ -9,6 +8,8 @@ import java.io.InputStream;
  */
 public interface Resource extends InputStreamResource{
 
+    public static final String CLASS_PATH_PREFIX = "classpath:";
+    public static final String FILE_SYSTEM_PREFIX = "file:";
 
     boolean exists();
 
