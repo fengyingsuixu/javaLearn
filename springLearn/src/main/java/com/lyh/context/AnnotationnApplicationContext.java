@@ -1,5 +1,7 @@
 package com.lyh.context;
 
+import com.lyh.beans.BeanDefinitionRegistry;
+
 import java.io.IOException;
 
 /**
@@ -10,8 +12,8 @@ public class AnnotationnApplicationContext extends AbstractApplicationContext{
 
     private ClassPathBeanDefinitionScanner scanner;
 
-    public AnnotationnApplicationContext(String ...basePackaes) {
-        this.scanner = new ClassPathBeanDefinitionScanner();
+    public AnnotationnApplicationContext(String ...basePackaes) throws Exception{
+        this.scanner = new ClassPathBeanDefinitionScanner((BeanDefinitionRegistry)beanFactory);
         scanner.scan(basePackaes);
     }
 
