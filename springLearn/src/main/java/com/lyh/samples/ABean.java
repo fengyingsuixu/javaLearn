@@ -1,9 +1,12 @@
 package com.lyh.samples;
 
+import com.lyh.context.annotation.Component;
+
 /**
  * Created by lvyanghui
  * 2019/1/16 22:16
  */
+@Component
 public class ABean {
     public void initMethod(){
 

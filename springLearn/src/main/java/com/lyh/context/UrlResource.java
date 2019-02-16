@@ -3,6 +3,7 @@ package com.lyh.context;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
@@ -12,6 +13,10 @@ import java.net.URL;
 public class UrlResource implements Resource{
 
     private URL url;
+
+    public UrlResource(String location) throws MalformedURLException {
+        this.url = new URL(location);
+    }
 
     public UrlResource(URL url) {
         this.url = url;

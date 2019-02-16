@@ -1,8 +1,5 @@
 package com.lyh.context.annotation;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-
 import java.lang.annotation.*;
 
 /**
@@ -16,15 +13,15 @@ public @interface Component {
 
     String SCOPE_SINGLETON = "singleton";
 
-    String className();
+    String className() default "";
 
     String scope() default SCOPE_SINGLETON;
 
-    String factoryBeanName();
+    String factoryBeanName() default "";
 
-    String factoryMethodName();
+    String factoryMethodName() default "";
 
-    String initMethodName();
+    String initMethodName() default "";
 
-    String destroyMethodName();
+    String destroyMethodName() default "";
 }

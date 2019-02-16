@@ -28,9 +28,9 @@ public class XmlApplicationContext extends AbstractApplicationContext{
         if(location.startsWith(Resource.CLASS_PATH_PREFIX)){
             resource = new ClassPathResource(location);
         }else if(location.startsWith(Resource.FILE_SYSTEM_PREFIX)){
-
+            resource = new FileSystemResource(location);
         }else{
-
+            resource = new UrlResource(location);
         }
         return resource;
     }

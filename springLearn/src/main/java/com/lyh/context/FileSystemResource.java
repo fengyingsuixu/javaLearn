@@ -13,6 +13,10 @@ public class FileSystemResource implements Resource{
 
     private File file;
 
+    public FileSystemResource(String location) {
+        this.file = new File(location);
+    }
+
     public FileSystemResource(File file) {
         this.file = file;
     }

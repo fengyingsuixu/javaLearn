@@ -2,7 +2,6 @@ package com.lyh.context;
 
 import com.lyh.beans.BeanDefinitionRegistry;
 import com.lyh.beans.GenericBeanDefinition;
-import com.lyh.samples.dom.DomContext;
 import org.w3c.dom.*;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -38,7 +37,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader{
         }
     }
 
-    //解析xml 创建bean对象 注册bean对象
+    //解析xml
     public void parseXml(InputStream inputStream)throws Exception{
 
         //创建一个DocumentBuilderFactory的对象
@@ -46,27 +45,31 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader{
 
         //创建DocumentBuilder对象
         DocumentBuilder db = dbf.newDocumentBuilder();
-        //通过DocumentBuilder对象的parser方法加载books.xml文件到当前项目下
-        InputStream in = DomContext.class.getResourceAsStream("/applicationContext.xml");
-        Document document = db.parse(in);
-        //获取所有book节点的集合
+
+        Document document = db.parse(inputStream);
+        //获取所有节点的集合
         Element element = document.getDocumentElement();
 
         NodeList childNodes = element.getChildNodes();
         for (int i = 0,len = childNodes.getLength(); i < len; i++) {
             Node item = childNodes.item(i);
             if("bean".equals(item.getNodeName())){
-                GenericBeanDefinition beanDefinition = new GenericBeanDefinition();
-                NamedNodeMap attributes = item.getAttributes();
-                for (int j = 0,leng = attributes.getLength(); j < leng; j++) {
-                    Node attr = attributes.item(j);
-                    if("id".equals(attr.getNodeName())){
-                        registry.registerBeanDefinition(attr.getNodeValue(),beanDefinition);
-                    }
-                    if("class".equals(attr.getNodeName())){
-                        beanDefinition.setBeanClass(Class.forName(attr.getNodeValue()));
-                    }
-                }
+                parseBean(item);
+            }
+        }
+    }
+
+    // 创建bean对象 注册bean对象
+    public void parseBean(Node item)throws Exception{
+        GenericBeanDefinition beanDefinition = new GenericBeanDefinition();
+        NamedNodeMap attributes = item.getAttributes();
+        for (int j = 0,leng = attributes.getLength(); j < leng; j++) {
+            Node attr = attributes.item(j);
+            if("id".equals(attr.getNodeName())){
+                registry.registerBeanDefinition(attr.getNodeValue(),beanDefinition);
+            }
+            if("class".equals(attr.getNodeName())){
+                beanDefinition.setBeanClass(Class.forName(attr.getNodeValue()));
             }
         }
     }
