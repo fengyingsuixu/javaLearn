@@ -17,7 +17,7 @@ public class AnnotationBeanDefinitionReader extends AbstractBeanDefinitionReader
 
 
     @Override
-    public void loadBeanDefinitions(Resource resource) {
+    public void loadBeanDefinitions(Resource resource) throws Exception{
         File file = resource.getFile();
 
         String name = file.getName();
@@ -31,7 +31,7 @@ public class AnnotationBeanDefinitionReader extends AbstractBeanDefinitionReader
     }
 
     @Override
-    public void loadBeanDefinitions(Resource... resources) {
+    public void loadBeanDefinitions(Resource... resources) throws Exception{
 
         if(null != resources && resources.length > 0){
             for(Resource resource : resources){

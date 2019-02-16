@@ -15,10 +15,10 @@ public class XmlApplicationContext extends AbstractApplicationContext{
     private List<Resource> resources;
     private BeanDefinitionReader reader;
 
-    public XmlApplicationContext(String ...locations)throws IOException{
+    public XmlApplicationContext(String ...locations)throws Exception{
         load(locations);
         reader = new XmlBeanDefinitionReader((BeanDefinitionRegistry) beanFactory);
-        reader.loadBeanDefinitions((Resource[]) resources.toArray());
+        reader.loadBeanDefinitions(resources.toArray(new Resource[resources.size()]));
     }
 
     @Override

@@ -24,7 +24,8 @@ public class ClassPathResource implements Resource{
         InputStream inputStream = null;
         if(StringUtils.isNotEmpty(path)){
             if(path.startsWith(CLASS_PATH_PREFIX)){
-                inputStream = this.getClass().getResourceAsStream(path);
+                String realPath = "/" + path.substring(CLASS_PATH_PREFIX.length());
+                inputStream = this.getClass().getResourceAsStream(realPath);
             }
         }
         return inputStream;

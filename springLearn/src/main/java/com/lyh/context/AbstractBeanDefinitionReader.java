@@ -9,7 +9,7 @@ import com.lyh.beans.BeanDefinitionRegistry;
 public abstract class AbstractBeanDefinitionReader implements BeanDefinitionReader{
 
 
-    private BeanDefinitionRegistry registry;
+    protected BeanDefinitionRegistry registry;
 
     public AbstractBeanDefinitionReader(BeanDefinitionRegistry registry) {
         this.registry = registry;
