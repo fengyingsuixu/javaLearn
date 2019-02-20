@@ -1,8 +1,11 @@
 package com.lyh.context;
 
+import com.lyh.samples.ABean;
 import com.lyh.samples.BBean;
+import com.lyh.samples.CBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Created by lvyanghui
@@ -13,13 +16,17 @@ public class ContextSource {
     public static void main(String[] args) {
 
         //xml配置方式
-        /*ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        ABean aBean = (ABean) context.getBean("aBean");
-        aBean.methodA();*/
+        ApplicationContext xmlContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ABean aBean = (ABean) xmlContext.getBean("aBean");
+        aBean.methodA();
 
         //注解方式
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.lyh.samples");
-        BBean bBean = (BBean) context.getBean("BBean");
+        ApplicationContext annoContext = new AnnotationConfigApplicationContext("com.lyh.samples");
+        BBean bBean = (BBean) annoContext.getBean("BBean");
         bBean.methodB();
+
+        ApplicationContext configContext = new AnnotationConfigApplicationContext(AnnoConfiguration.class);
+        CBean cBean = (CBean) configContext.getBean("CBean");
+        cBean.methodC();
     }
 }
