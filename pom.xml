@@ -12,6 +12,7 @@
         <module>zookeeperLearn</module>
         <module>springLearn</module>
         <module>springSource</module>
+        <module>springbootLearn</module>
     </modules>
 
 
