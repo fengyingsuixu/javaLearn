@@ -13,6 +13,7 @@
         <module>springLearn</module>
         <module>springSource</module>
         <module>springbootLearn</module>
+        <module>eurekaServer</module>
     </modules>
 
 
