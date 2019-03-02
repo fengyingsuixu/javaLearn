@@ -16,6 +16,7 @@
         <module>eurekaServer</module>
         <module>eurekaServerCluster</module>
         <module>serviceProvider</module>
+        <module>serviceConsumer</module>
     </modules>
 
 

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: serviceConsumer
+server:
+  port: 9000
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7000/eureka/
