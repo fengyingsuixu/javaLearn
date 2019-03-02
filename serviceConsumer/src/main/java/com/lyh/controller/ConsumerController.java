@@ -4,10 +4,7 @@ import com.lyh.remoteservice.FeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -27,8 +24,8 @@ public class ConsumerController {
     @Autowired
     FeignService feignService;
 
-    @GetMapping("/client")
-    public String clientName(@RequestParam String name){
+    @GetMapping("/client/{name}")
+    public String clientName(@PathVariable String name){
 
         ServiceInstance instance = loadBalancerClient.choose("serviceProvider");
         String url = "http://" + instance.getHost() + ":" + instance.getPort() + "/provider/hello?name=" + name;
@@ -36,8 +33,8 @@ public class ConsumerController {
         return restTemplate.getForObject(url,String.class);
     }
 
-    @GetMapping("/feign")
-    public String feignName(@RequestParam String name){
+    @GetMapping("/feign/{name}")
+    public String feignName(@PathVariable String name){
 
         return feignService.feignHello(name);
     }

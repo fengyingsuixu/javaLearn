@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * Created by lvyanghui
  * 2019/3/2 18:37
  */
-@FeignClient("serviceProvider")
+@FeignClient(value = "serviceProvider",fallback = FeignFallback.class)
 public interface FeignService {
 
     @GetMapping("/provider/hello")
