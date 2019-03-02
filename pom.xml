@@ -14,6 +14,7 @@
         <module>springSource</module>
         <module>springbootLearn</module>
         <module>eurekaServer</module>
+        <module>eurekaServerCluster</module>
     </modules>
 
 
