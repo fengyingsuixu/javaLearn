@@ -25,7 +25,7 @@ public class ConsumerController {
     FeignService feignService;
 
     @GetMapping("/client/{name}")
-    public String clientName(@PathVariable String name){
+    public String clientName(@PathVariable("name") String name){
 
         ServiceInstance instance = loadBalancerClient.choose("serviceProvider");
         String url = "http://" + instance.getHost() + ":" + instance.getPort() + "/provider/hello?name=" + name;
@@ -34,7 +34,7 @@ public class ConsumerController {
     }
 
     @GetMapping("/feign/{name}")
-    public String feignName(@PathVariable String name){
+    public String feignName(@PathVariable("name") String name){
 
         return feignService.feignHello(name);
     }
