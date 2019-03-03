@@ -10,7 +10,7 @@ eureka:
   instance:
     hostname: server2
   client:
-    #registerWithEureka: false
-    #fetchRegistry: false
+    registerWithEureka: false
+    fetchRegistry: false
     serviceUrl:
-      defaultZone: http://server1:7001/eureka/,http://server3:7003/eureka/
+      defaultZone: http://server1:7001/eureka/,http://server2:7002/eureka/,http://server3:7003/eureka/
