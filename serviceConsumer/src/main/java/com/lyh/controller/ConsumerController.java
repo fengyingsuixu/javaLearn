@@ -24,8 +24,8 @@ public class ConsumerController {
     @Autowired
     FeignService feignService;
 
-    @GetMapping("/client/{name}")
-    public String clientName(@PathVariable("name") String name){
+    @GetMapping("/client")
+    public String clientName(@RequestParam String name){
 
         ServiceInstance instance = loadBalancerClient.choose("serviceProvider");
         String url = "http://" + instance.getHost() + ":" + instance.getPort() + "/provider/hello?name=" + name;
