@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: configServer
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/fengyingsuixu/javaLearn
+          searchPaths: javaLearn
+          username:
+          password:
+server:
+  port: 8000
+
+

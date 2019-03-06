@@ -18,6 +18,7 @@
         <module>serviceProvider</module>
         <module>serviceConsumer</module>
         <module>serviceZuul</module>
+        <module>configServer</module>
     </modules>
 
 
