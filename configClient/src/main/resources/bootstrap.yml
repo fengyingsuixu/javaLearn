@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      label: master
+      uri: http://localhost:8000
+      profile: dev
+server:
+  port: 8010
