@@ -22,6 +22,7 @@
         <module>configClient</module>
         <module>serviceLink</module>
         <module>serviceTrack</module>
+        <module>serviceTurbine</module>
     </modules>
 
 
