@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
+//@RefreshScope
 public class UserController {
 
     @Value("${name}")
