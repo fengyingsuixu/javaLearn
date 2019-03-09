@@ -1,0 +1,7 @@
+server:
+  port: 9600
+spring:
+  application:
+    name: serviceTrack
+  zipkin:
+    baseUrl: http://localhost:9411

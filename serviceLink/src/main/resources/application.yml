@@ -1,0 +1,7 @@
+server:
+  port: 9500
+spring:
+  application:
+    name: serviceLink
+  zipkin:
+    baseUrl: http://localhost:9411

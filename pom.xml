@@ -20,6 +20,8 @@
         <module>serviceZuul</module>
         <module>configServer</module>
         <module>configClient</module>
+        <module>serviceLink</module>
+        <module>serviceTrack</module>
     </modules>
 
 
