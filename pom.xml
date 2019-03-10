@@ -23,6 +23,7 @@
         <module>serviceLink</module>
         <module>serviceTrack</module>
         <module>serviceTurbine</module>
+        <module>servicePvd</module>
     </modules>
 
 

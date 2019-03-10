@@ -1,16 +1,18 @@
-package com.lv;
+package com.lyh;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
-import org.springframework.cloud.netflix.turbine.EnableTurbine;
 
 /**
  * Created by lvyanghui
- * 2019/3/9 22:40
+ * 2019/3/2 17:34
  */
 @SpringBootApplication
-@EnableTurbine
+@EnableDiscoveryClient
+@EnableCircuitBreaker
 @EnableHystrixDashboard
 public class JarApp {
 

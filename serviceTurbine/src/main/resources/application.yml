@@ -19,7 +19,7 @@ management:
         allowed-methods: "*"
 
 turbine:
-  app-config: serviceProvider
+  app-config: serviceProvider,servicePvd
   aggregator:
     clusterConfig: default
   clusterNameExpression: new String("default")
