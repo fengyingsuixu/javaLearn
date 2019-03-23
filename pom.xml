@@ -24,6 +24,7 @@
         <module>serviceTrack</module>
         <module>serviceTurbine</module>
         <module>servicePvd</module>
+        <module>opencvLearn</module>
     </modules>
 
 
