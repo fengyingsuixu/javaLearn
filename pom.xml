@@ -25,6 +25,7 @@
         <module>serviceTurbine</module>
         <module>servicePvd</module>
         <module>opencvLearn</module>
+        <module>sofabootLearn</module>
     </modules>
 
 
