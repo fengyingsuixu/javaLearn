@@ -26,6 +26,7 @@
         <module>servicePvd</module>
         <module>opencvLearn</module>
         <module>sofabootLearn</module>
+        <module>algorithm</module>
     </modules>
 
 
