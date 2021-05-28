@@ -11,9 +11,7 @@ public class BubbleSort implements SortAlgorithm{
         for(int i = 0, size = unsorted.length; i < size - 1; i++){
             for(int j = 0; j < size - 1 - i; j++){
                 if(unsorted[j].compareTo(unsorted[j+1]) > 0 ){
-                    T tmp = unsorted[j];
-                    unsorted[j] = unsorted[j+1];
-                    unsorted[j+1] = tmp;
+                    SortUtils.swap(unsorted,j,j+1);
                 }
             }
         }
@@ -28,8 +26,6 @@ public class BubbleSort implements SortAlgorithm{
         //Integer[] iArray = {1, 4, 7, 9, 15};
         BubbleSort bubbleSort = new BubbleSort();
         bubbleSort.sort(iArray);
-        for(int k = 0; k < iArray.length; k++){
-            System.out.println("第" + k + "值=" + iArray[k]);
-        }
+        SortUtils.print(iArray);
     }
 }
