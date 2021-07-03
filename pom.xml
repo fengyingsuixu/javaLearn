@@ -27,6 +27,7 @@
         <module>opencvLearn</module>
         <module>sofabootLearn</module>
         <module>algorithm</module>
+        <module>rpc</module>
     </modules>
 
 
