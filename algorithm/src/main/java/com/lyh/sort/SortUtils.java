@@ -8,6 +8,14 @@ import java.util.Arrays;
  */
 public class SortUtils {
 
+    public static <T extends Comparable<T>> boolean less (T v, T w){
+        return v.compareTo(w) < 0;
+    }
+
+    public static <T extends Comparable<T>> boolean greater (T v, T w){
+        return v.compareTo(w) > 0;
+    }
+
     public static <T> boolean swap(T[] array, int x, int y){
         T tmp = array[x];
         array[x] = array[y];

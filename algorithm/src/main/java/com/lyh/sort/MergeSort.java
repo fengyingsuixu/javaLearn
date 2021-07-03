@@ -42,6 +42,7 @@ public class MergeSort implements SortAlgorithm{
             temp[k++] = arr[j++];
         }
 
+        System.out.println("开始merge，left=" + left + " mid=" + mid + " right=" + right);
         System.arraycopy(temp,0, arr, left, length);
     }
 
