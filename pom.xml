@@ -28,6 +28,7 @@
         <module>sofabootLearn</module>
         <module>algorithm</module>
         <module>rpc</module>
+        <module>httpServer</module>
     </modules>
 
 
